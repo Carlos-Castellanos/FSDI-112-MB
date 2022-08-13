@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}" />
+{% endblock link %}
+
 {% block title %}{{ post.title }}{% endblock title %}
 
 
 {% block content %}
-
 <div class="border">
-    <h1 class="ttt">Title: {{ post.title }}</h1>
+    <h1 id="ptitle">Title: {{ post.title }}</h1>
     <h2>Subtitle: {{ post.subtitle }}</h2>
     <strong>Create on: {{ post.created_on }}</strong>
 
-    <p>Content</p>
-    <div class="container border body">
+    <p id="paraph">Content</p>
+    <div class="container" id="postbox"">
         <p>{{ post.body }}</p>
     </div>
 
