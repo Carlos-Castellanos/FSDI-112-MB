@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Post{% endblock title %}
+
+{% block content %}
+
+<h1>Posts</h1>
+<ul class="list-group list-group-flush">
+    {% for post in post_list %}
+    <li class="list-group-item">
+        <a href="{% url 'post_detail' pk=post.id %}"> <button>Details</button></a>
+        <label>{{ post.id }}</label>
+        <label>{{ post.title }}</label>
+    </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+
+
+<!-- <li class="list-group-item list-group-item-secondary ">{{ post.title }}</li> -->
